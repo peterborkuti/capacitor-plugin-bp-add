@@ -11,8 +11,8 @@ public class Add extends Plugin {
 
     @PluginMethod()
     public void add(PluginCall call) {
-        Double a = call.getDouble("a", 0);
-        Double b = call.getDouble("b", 0);
+        Double a = call.getDouble("a", 0D);
+        Double b = call.getDouble("b", 0D);
 
         JSObject ret = new JSObject();
         ret.put("value", a + b);
