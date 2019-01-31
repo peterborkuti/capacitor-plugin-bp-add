@@ -10,11 +10,12 @@ import com.getcapacitor.PluginMethod;
 public class Add extends Plugin {
 
     @PluginMethod()
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    public void add(PluginCall call) {
+        Double a = call.getDouble("a", 0);
+        Double b = call.getDouble("b", 0);
 
         JSObject ret = new JSObject();
-        ret.put("value", value);
+        ret.put("value", a + b);
         call.success(ret);
     }
 }
