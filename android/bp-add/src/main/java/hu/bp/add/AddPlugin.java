@@ -11,12 +11,12 @@ public class AddPlugin extends Plugin {
 
     @PluginMethod()
     public void add(PluginCall call) {
-        Double a = call.getInt("a", 0D);
-        Double b = call.getInt("b", 0D);
+        Double a = 0D + call.getInt("a", 0);
+        Double b = 0D + call.getInt("b", 0);
 
         JSObject ret = new JSObject();
         ret.put("value", a + b);
-        ret.put("ver", "Android:0.0.8");
+        ret.put("ver", "Android:0.0.9");
         call.success(ret);
     }
 }
