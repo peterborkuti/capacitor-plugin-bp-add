@@ -1,9 +1,9 @@
 declare global {
   interface PluginRegistry {
-    Add?: AddPlugin;
+    AddPlugin?: IAddPlugin;
   }
 }
 
-export interface AddPlugin {
-  add(options: { a: number, b: number }): Promise<{value: number}>;
+export interface IAddPlugin {
+  add(options: { a: number, b: number }): Promise<{value: number, ver: string}>;
 }

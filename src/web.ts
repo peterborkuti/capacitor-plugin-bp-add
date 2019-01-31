@@ -1,7 +1,7 @@
 import { WebPlugin } from '@capacitor/core';
-import { AddPlugin } from './definitions';
+import { IAddPlugin } from './definitions';
 
-export class AddWeb extends WebPlugin implements AddPlugin {
+class AddPluginWeb extends WebPlugin implements IAddPlugin {
   constructor() {
     super({
       name: 'Add',
@@ -9,11 +9,11 @@ export class AddWeb extends WebPlugin implements AddPlugin {
     });
   }
 
-  async add(options: { a: number, b: number }): Promise<{value: number}> {
-    return {value: options.a + options.b};
+  async add(options: { a: number, b: number }): Promise<{value: number, ver: string}> {
+    return {value: options.a + options.b, ver: 'web:0.0.5'};
   }
 }
 
-const Add = new AddWeb();
+const AddWebPlugin = new AddPluginWeb();
 
-export { Add };
+export { AddWebPlugin };
