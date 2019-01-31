@@ -5,5 +5,5 @@ declare global {
 }
 
 export interface AddPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
+  add(options: { a: number, b: number }): Promise<{value: number}>;
 }

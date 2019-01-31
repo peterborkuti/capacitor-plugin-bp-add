@@ -9,9 +9,8 @@ export class AddWeb extends WebPlugin implements AddPlugin {
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async add(options: { a: number, b: number }): Promise<{value: number}> {
+    return {value: options.a + options.b};
   }
 }
 
